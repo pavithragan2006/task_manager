@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Manager</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; line-height: 1.6; background-color: #f4f4f9; }
+        .container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .hidden { display: none; }
+        .task-item { border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between; align-items: center; }
+        .completed { text-decoration: line-through; color: gray; }
+        input { padding: 8px; margin: 5px 0; width: 80%; }
+        button { padding: 8px 15px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        .delete-btn { background: #dc3545; margin-left: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <div id="auth-section">
+            <h3>Login / Register</h3>
+            <input type="email" id="email" placeholder="Email"><br>
+            <input type="password" id="password" placeholder="Password"><br><br>
+            <button type="button" onclick="handleAuth('login')">Login</button>
+            <button type="button" onclick="handleAuth('register')">Register</button>
+        </div>
+
+        <div id="task-section" class="hidden">
+            <div style="display: flex; justify-content: space-between;">
+                <h3>Your Tasks</h3>
+                <button onclick="logout()" style="background:#6c757d">Logout</button>
+            </div>
+            <hr>
+            <input type="text" id="task-title" placeholder="What needs to be done?">
+            <button type="button" onclick="createTask()">Add Task</button>
+            <div id="task-list"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
