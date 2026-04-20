@@ -28,3 +28,4 @@ SECRET_KEY: Your unique secret key for JWT.
 ALGORITHM: HS256.
 how to run locally
 uvicorn app.main:app --reload
+deployment link -- https://task-manager-kiso.onrender.com
